@@ -11,6 +11,11 @@ if ($orders && count($orders)) {
     // Unset orders key to achieve the desired output
     unset($output['orders']);
 
+    // Output to file
+    $output_filename = "output.json";
+    file_put_contents($output_filename, json_encode($output, JSON_PRETTY_PRINT));
+
+    // Print output
     echo json_encode($output, JSON_PRETTY_PRINT);
 
 } else {
